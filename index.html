@@ -70,7 +70,16 @@
     table { border-collapse: collapse; width: 100%; border: 1.5px solid var(--navy); table-layout: fixed; }
     th, td { border: 1px solid var(--navy); padding: 5px; text-align: center; font-size: 0.8rem; color: var(--navy); overflow: hidden; }
     th { background-color: #f1f5f9; font-weight: 900; text-transform: uppercase; }
+    /* ── Section 2 OBSERVATIONS 표시 보정 ─────────────────────── */
+    /* (1) 문장 길이와 무관하게 셀 안에서 세로 중앙 정렬 */
+    #obsBody td { height: 110px; }
+    #obsBody textarea { min-height: 0 !important; }
 
+    /* (2) 삭제(✕) 버튼이 본문을 가리지 않도록 우측 여백 확보 */
+    #obsBody textarea,
+    #threatBody textarea[data-field="notes"],
+    #errorBody textarea[data-field="notes"],
+    #uasBody textarea[data-field="notes"] { padding-right: 38px !important; }
     .nav-tab { border-bottom: 4px solid transparent; }
     .nav-tab.active {
       border-bottom: 4px solid var(--navy);
